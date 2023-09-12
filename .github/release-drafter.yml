@@ -34,17 +34,29 @@ version-resolver:
   default: patch
 autolabeler:
   - label: 'chore'
+    title:
+      - '/chore:/i'  
+  - label: 'docs'
     files:
       - '*.md'
+    title:
+      - '/docs:/i'      
     branch:
       - '/docs{0,1}\/.+/'
   - label: 'bug'
     branch:
       - '/fix\/.+/'
     title:
-      - '/fix/i'
+      - '/fix:/i'
   - label: 'enhancement'
     branch:
       - '/feature\/.+/'
+    title:
+      - '/feat:/i'
+  - label: 'dependencies'
+    title:
+      - '/deps:/i'
+      - '/dependencies:/i'
+      - '/bump:/i'
 template: |
   $CHANGES
